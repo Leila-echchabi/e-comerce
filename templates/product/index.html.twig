@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="container boutiqueCard">
+            <div class="row center productsList">
+                <div class="product col-md-6 col-lg-4">
+                        <a class="watch" href="#">
+                            <div class="card" style="width: 18rem;">
+                                <img src="Img-Boutique-e-commerce/imgBoutique5.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">Watch One</p>
+                                    <span>129€</span>
+                                    <button class="buy" data-name='Watch One'>acheter</button>
+                                </div>
+                            </div>
+                        </a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
