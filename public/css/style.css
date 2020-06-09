@@ -1,0 +1,298 @@
+                    /*GENERAL*/
+                    
+                    * {
+                        box-sizing: border-box;
+                    }
+                    
+                    .container {
+                        width: 100%;
+                        margin-left: auto;
+                        margin-top: auto;
+                    }
+                    
+                    body {
+                        width: 100%;
+                        transition: all 1s ease-in-out;
+                    }
+                    
+                    .none {
+                        display: none;
+                    }
+                    /*HEADER*/
+                    
+                    header {
+                        text-align: center;
+                    }
+                    
+                    header .logoHeader {
+                        width: 150px;
+                    }
+                    
+                    header nav {
+                        border-bottom: 1px solid black;
+                    }
+                    
+                    header nav a {
+                        text-decoration: none;
+                        color: black;
+                        text-transform: uppercase;
+                    }
+                    
+                    header nav a:hover {
+                        color: #c48b21;
+                    }
+                    
+                    nav .fas {
+                        border-left: 1px solid black;
+                        border-right: 1px solid black;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        color: #c48b21;
+                    }
+                    /*----------MAIN INDEX---------*/
+                    
+                    .acceuil {
+                    
+                        padding-top: 1rem;
+                    }
+                    
+                    main h1 {
+                        font-family: 'Fredericka the Great', cursive;
+                        margin-bottom: 1.5rem;
+                        text-shadow: 5px 5px 5px #262626;
+                    }
+                    
+                    main h1 .letters {
+                        margin: 0;
+                        padding: 0;
+                        letter-spacing: -15px;
+                    }
+                    
+                    main .carousel-item {
+                        position: relative;
+                    }
+                    
+                    main .collection {
+                        position: absolute;
+                        color: #fff;
+                        z-index: 1;
+                        text-align: center;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        padding: 2rem;
+                        border-radius: 5px;
+                    }
+                    
+                    main .collection a {
+                        color: #fff;
+                        border: 2px solid #fff;
+                        border-radius: 5px;
+                        padding: 5px 25px;
+                    }
+                    
+                    main .collection a:hover {
+                        color: #fff;
+                        background-color: #c48b21;
+                        border: 2px solid #c48b21;
+                        border-radius: 5px;
+                        padding: 5px 25px;
+                        text-decoration: none;
+                    }
+                    /*---------MAIN BOUTIQUE--------*/
+                    
+                    main .boutiqueCard {
+                        text-align: center;
+                    }
+                    
+                    main .boutiqueCard button {
+                        display: flex;
+                        margin: auto;
+                        margin-top: 15px;
+                        border-radius: 5px;
+                        padding: 5px 25px;
+                    }
+                    
+                    .boutiqueCard .product {
+                        width: auto;
+                        margin: 30px auto;
+                        border: none;
+                    }
+                    
+                    .watch :hover {
+                        transform: scale(1.05);
+                        transition: all 0.5s ease-in-out;
+                        overflow: hidden;
+                        box-shadow: 5px 5px 5px rgba(38, 38, 38, 1);
+                    }
+                    
+                    .boutiqueCard a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+                    
+                    .boutiqueCard a:hover {
+                        color: #c48b21;
+                    }
+                    
+                    button .orange {
+                        color: #c48b21;
+                        border-color: #fff;
+                    }
+                    /*---------A PROPOS----------*/
+                    /*----------MAIN CART---------*/
+                    /* main #shoppingCart
+{
+    display: none;
+} */
+                    
+                    main div#shoppingCart div.contenu-panier div#cart {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin-bottom: 2px;
+                    }
+                    
+                    main div#shoppingCart button {
+                        border-radius: 5px;
+                        padding: 5px 25px;
+                    }
+                    
+                    main div#shoppingCart button:hover {
+                        color: #fff;
+                        background-color: #c48b21;
+                        border: 2px solid #c48b21;
+                        text-decoration: none;
+                    }
+                    
+                    main div#shoppingCart div.totalPrice {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    
+                    main div#shoppingCart button.buy {
+                        color: #fff;
+                        border-radius: 5px;
+                        padding: 5px 25px;
+                        background-color: green;
+                        border: 2px solid green;
+                    }
+                    
+                    main div#shoppingCart button.buy:hover {
+                        background-color: darkgreen;
+                        border: 2px solid darkgreen;
+                        text-decoration: none;
+                    }
+
+                    /*FOOTER*/
+                    
+                    footer {
+                        border-top: 1px solid #c48b21;
+                        margin: 2rem;
+                        padding: 1rem;
+                        height: 5vh;
+                    }
+                    
+                    footer div .fab {
+                        font-size: 30px;
+                        color: #c48b21;
+                    }
+                    /* MAIN DETAIL */
+                    
+                    .imgPrd img {
+                        margin-top: 2rem;
+                        margin-bottom: 2rem;
+                        margin-left: 0;
+                        margin-right: 0;
+                        border-radius: 5px;
+                    }
+                    
+                    .imgPrd img:hover {
+                        box-shadow: 5px 5px 2px 1px rgba(38, 38, 38, 1);
+                        transform: scale(1.1);
+                        transition: all 0.5s ease-in-out;
+                    }
+                    
+                    .price {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: #c48b21;
+                    }
+                    /* PANIER */
+                    
+                    .img-panier {
+                        width: 50px;
+                    }
+                    
+                    .quantity {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+                    
+                    #total {
+                        font-size: 2rem;
+                        color: #c48b21;
+                        font-weight: bold;
+                    }
+                    /* #panier {
+                        background-color: rgba(0, 0, 0, 0.5);
+                        width: 100%;
+                        height: 100vh;
+                        color: #fff;
+                        padding: 3rem;
+                        position: absolute;
+                    } */
+                    /* responsive */
+                    
+                    @media screen and (max-width: 991px) {
+                        .white {
+                            color: #fff !important;
+                        }
+                        .navbar-collapse {
+                            z-index: 999;
+                            background-color: rgba(0, 0, 0, 0.5);
+                        }
+                    }
+                    /* css d'alex */
+                    
+                    .faqHeader {
+                        font-family: 'Fredericka the Great', cursive;
+                        margin-bottom: 1.5rem;
+                        text-shadow: 5px 5px 5px #262626;
+                        font-size: 27px;
+                        margin: 20px;
+                
+                    }
+                    .alert-dismissible{
+                        background-color: white;
+                    }
+                    .accordion-toggle{
+                        color: #000;
+                    }
+                    .faqHeader{
+                        color:#000; 
+                    }
+                    
+                    ​ .panel-heading [data-toggle="collapse"]:after {
+                        font-family: 'Fredericka the Great', cursive;
+                        content: "/e072";
+                        /* "play" icon */
+                        float: right;
+                        color: #c48b21;
+                        font-size: 1, 2rem;
+                        line-height: 1, 2;
+                        /* rotate "play" icon from > (right arrow) to down arrow */
+                        -webkit-transform: rotate(-90deg);
+                        -moz-transform: rotate(-90deg);
+                        -ms-transform: rotate(-90deg);
+                        -o-transform: rotate(-90deg);
+                        transform: rotate(-90deg);
+                    }
+                    
+                    ​ .panel-heading [data-toggle="collapse"].collapsed:after {
+                        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+                        -webkit-transform: rotate(90deg);
+                        -moz-transform: rotate(90deg);
+                        -ms-transform: rotate(90deg);
+                        -o-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                        color: #454444;
+                    }
