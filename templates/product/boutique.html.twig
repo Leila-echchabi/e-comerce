@@ -2,23 +2,25 @@
 
 {% block title %}Boutique{% endblock %}
 
-{% block body %}
-    <main>
+{% block main %}
         <div class="container boutiqueCard">
             <div class="row center productsList">
+        {% for watch in watchesList %}
                 <div class="product col-md-6 col-lg-4">
                         <a class="watch" href="#">
                             <div class="card" style="width: 18rem;">
-                                <img src="Img-Boutique-e-commerce/imgBoutique5.jpg" class="card-img-top" alt="...">
+                                <img src="{{ asset (watch.image) }}" class="card-img-top" alt="{{ watch.name }}">
                                 <div class="card-body">
-                                    <p class="card-text">Watch One</p>
-                                    <span>129€</span>
-                                    <button class="buy" data-name='Watch One'>acheter</button>
+                                    <p class="card-text text-center">{{ watch.name }}</p>
+                                    <p class="text-center">{{watch.price}}€</p>
+                                    <div class="text-center">
+                                        <button class=" btn btn-light buy " data-name="{{ watch.id }}">acheter</button>
+                                    </div>
                                 </div>
                             </div>
                         </a>
                 </div>
+        {% endfor %}
             </div>
         </div>
-    </main>
 {% endblock %}
