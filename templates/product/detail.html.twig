@@ -18,7 +18,8 @@
 
                     <p class="price">{{ watch.price }}€</p>
 
-                    <button class="buy btn btn-light" data-name='{{ watch.id }}'>Acheter</button>
+                    <a class="buy btn btn-light" data-name='{{ watch.id }}'href="{{ path('add_cart', {'id': watch.id})
+                    }}">Ajouter</a>
                 </div>
             </div>
         </div>
