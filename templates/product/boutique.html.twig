@@ -3,24 +3,27 @@
 {% block title %}Boutique{% endblock %}
 
 {% block main %}
-        <div class="container boutiqueCard">
-            <div class="row center productsList">
-        {% for watch in watchesList %}
+    <div class="container boutiqueCard">
+        <div class="row center productsList">
+            {% for watch in watchesList %}
                 <div class="product col-md-6 col-lg-4">
+
+                    <div class="card" style="width: 18rem;">
                         <a class="watch" href="{{ path('detail', {id: watch.id}) }}">
-                            <div class="card" style="width: 18rem;">
-                                <img src="{{ asset (watch.image) }}" class="card-img-top" alt="{{ watch.name }}">
-                                <div class="card-body">
-                                    <p class="card-text text-center">{{ watch.name }}</p>
-                                    <p class="text-center">{{watch.price}}€</p>
-                                    <div class="text-center">
-                                        <button class=" btn btn-light buy " data-name="{{ watch.id }}">acheter</button>
-                                    </div>
-                                </div>
+                            <img src="{{ asset (watch.image) }}" class="card-img-top" alt="{{ watch.name }}">
+                            <div class="card-body">
+                                <p class="card-text text-center">{{ watch.name }}</p>
+                                <p class="text-center">{{watch.price}}€</p>
                             </div>
                         </a>
+                        <div class="text-center mb-2">
+                            <a class=" btn btn-light buy " data-name="{{ watch.id }}" href="{{ path('cart', {'id': watch.id}) }}">Ajouter</a>
+                        </div>
+
+                    </div>
+
                 </div>
-        {% endfor %}
-            </div>
+            {% endfor %}
         </div>
+    </div>
 {% endblock %}
