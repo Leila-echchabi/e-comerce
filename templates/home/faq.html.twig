@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            ​
+            <div class="page-header">
+                <h1>FAQ</h1>
+            </div>
+            ​
+            <!-- Bootstrap FAQ - START -->
+            <div class="container">
+
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">fermé</span></button> Ici vous trouver les questions souvent posé par les utilisateurs ​
+                    <br /> ​
+                    <div class="panel-group" id="accordion">
+                        <div class="faqHeader">Question Générale</div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        L'enregistrement du compte est-il requis?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    L'enregistrement est requis pour tout achat de produit
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Puis-je avoir un remboursement en cas de produit défectueux ?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTen" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Tout produit acheter et non remboursable. en cas de casse ou de produit défectueux adressez vous aux prestataires de livraison. </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+                                        Quelle est la devise utilisée pour toutes les transactions?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseEleven" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+                                    Tous les prix des thèmes, modèles et autres articles, y compris le solde du compte de chaque vendeur ou acheteur, sont en <strong> euro </strong>
+                                </div>
+                            </div>
+                        </div>
+                        ​
+                        <div class="faqHeader">Vendeurs</div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> d'où proviennent les produits?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Les produits sont frabbriqués sur place. chaque produit est unique.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Je veux acheter l'un de vos produits qu'elles sont les étapes?</a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+                                    Les étapes de ce processus sont vraiment simples. Il vous suffit de:
+                                    <ul>
+                                        <li>Enregistrez un compte</li>
+                                        <li>Activer votre compte</li>
+                                        <li>aller dans la section de vente de produit</li>
+                                        <li>l'étape suivante et l'étape du panier et du payment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Qu'elle sont mes options de payment?
+                            </div>
+                            <div id="collapseEight" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Vous pouvais directement payer par carte bancaire ou  avec le service paypal
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">quand est ce que jeserai livré</a>
+                                </h4>
+                            </div>
+                            <div id="collapseNine" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Vous êtes généralement livré sous 72h
+                                </div>
+                            </div>
+                        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ watch.name }}{% endblock %}
+
+
+{% block main %}
+    <main class="acceuil">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="imgPrd col-lg-6">
+                    <img class="image img-fluid" src="{{ asset(watch.image) }}" alt="{{ watch.name }}">
+                </div>
+
+                <div class="prd col-lg-6">
+                    <h1 class="name">{{ watch.name }}</h1>
+
+                    <p class="description ">{{ watch.description }}</p>
+
+                    <p class="price">{{ watch.price }}€</p>
+
+                    <button class="buy btn btn-light" data-name='{{ watch.id }}'>Acheter</button>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/detail.js') }}"></script>
+{% endblock %}
+
+

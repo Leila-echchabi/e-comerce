@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <div class="row">
+
+                <div class="form col-12 col-md-6">
+                    <h1>Contact</h1>
+                    <p>To contact us, use the form below. We will get back to you as soon as possible.</p>
+                    <form id="myForm" name="form" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="firstname"> First name: </label>
+                            <input class="form-control" type="text" name="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname"> Last name: </label>
+                            <input class="form-control" type="text" name="lastname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"> E-mail adress: </label>
+                            <input class="form-control" type="text" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Leave your message: </label>
+                            <textarea class="form-control" name="yourmessage" rows="10" cols="60"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Envoyer</button>
+                    </form>
+                </div>
+
+                <div class="map col-12 col-md-6 text-center pt-5">
+
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.208500114946!2d2.332566814977369!3d48.8733017076118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e39d8e5979f%3A0x743e0875ca467413!2s12%20Rue%20la%20Fayette%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1585775734860!5m2!1sfr!2sfr"
+                            width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    <p>12, rue de la Fayette 75009 Paris, France</p>
+                    <p><a href="mailto:josephwatch@outlook.fr">josephwatch@outlook.fr</a></p>
+                    <p>Tel: 01 34 56 78 </p>
+                    <p>Fax: 01 87 65 43</p>
+                </div>
+            </div> <!-- ROW-->
+        </div>
+    </main>
+{% endblock %}

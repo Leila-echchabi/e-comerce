@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À Propos{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <div class="row acceuil d-flex just ify-content-between align-items-center">
+
+                <div class="title col-md-2">
+                    <h1>À propos</h1>
+                </div>
+
+                <div class="paragraph col-md-4">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fugiat omnis minus deleniti, possimus quam eos excepturi iusto placeat quia recusandae accusantium eum laborum magnam, nemo amet vel mollitia earum?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, error laudantium consequuntur excepturi dolorem eius eligendi rerum id hic, sit doloremque omnis repudiandae architecto veritatis harum voluptatibus cupiditate magni
+                        ex!
+                    </p>
+                </div>
+
+                <div class="video col-md-6">
+                    <video muted loop autoplay width="450">
+                        <source src="{{ asset('film/watch.mp4') }}"
+                                votre navigateur ne prends pas en charge le vidéo
+                    </video>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/a_propos.js') }}"></script>
+{% endblock %}
