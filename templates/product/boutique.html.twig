@@ -7,7 +7,7 @@
             <div class="row center productsList">
         {% for watch in watchesList %}
                 <div class="product col-md-6 col-lg-4">
-                        <a class="watch" href="#">
+                        <a class="watch" href="{{ path('detail', {id: watch.id}) }}">
                             <div class="card" style="width: 18rem;">
                                 <img src="{{ asset (watch.image) }}" class="card-img-top" alt="{{ watch.name }}">
                                 <div class="card-body">

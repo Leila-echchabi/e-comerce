@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 
     <!-- CSS   -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 
@@ -27,33 +27,26 @@
 
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
 
-            <a href="#"><img class="logoHeader" src="logo/logo2-removebg.png" alt="logo"></a>
+            <a href="{{ path('home') }}"><img class="logoHeader" src="{{ asset('logo/logo2-removebg.png') }}" alt="logo"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link white" href="{{ path('home') }}">Accueil <span class="sr-only">(current)</span></a>
+                    {% set links = {home : "Accueil", boutique : "boutique", a_propos : "à propos", faq:"faq", contact:"contact"} %}
+                    {% for route,label in links %}
+                    <li class="nav-item {% if app.request.get("_route") == route %} active{% endif %}">
+                        <a class="nav-link white" href="{{ path(route) }}">{{ label }}{% if app.request.get("_route") == route %}<span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link white" href="{{ path('boutique') }}">Boutique</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link white" href="a-propos.html">à propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link white" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link white" href="contact.html">Contact</a>
-                    </li>
+                    {% endfor %}
+
                     <li class="nav-item">
                         <a class="nav-link white" href="panier.html">
                             <i class="fas fa-shopping-bag"><span class='nb'></span></i>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </nav>
@@ -90,13 +83,14 @@
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-
 <!--JS-->
-<script src="js/data.js"></script>
 <script src="js/panier.js"></script>
 <script>
     printnumberOfProducts();
 </script>
+
+{% block javascripts %}
+{% endblock %}
 
 </body>
 
