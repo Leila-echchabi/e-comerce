@@ -49,6 +49,8 @@
                         padding-right: 20px;
                         color: #c48b21;
                     }
+
+
                     /*----------MAIN INDEX---------*/
                     
                     .acceuil {
@@ -182,6 +184,12 @@
                         text-decoration: none;
                     }
 
+                    .trash {
+                        font-size: 30px;
+                        color: #c48b21;
+
+                    }
+
                     /*FOOTER*/
                     
                     footer {
@@ -191,7 +199,7 @@
                         height: 5vh;
                     }
                     
-                    footer div .fab {
+                    footer div .fab{
                         font-size: 30px;
                         color: #c48b21;
                     }
