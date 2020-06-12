@@ -10,13 +10,13 @@ class ProductFixtures extends Fixture
 {
 
 const PRODUCTS = '[
-{"name": "Alistair", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum lorem ilpsum ", "price": "129", "image": "Img-Boutique-e-commerce/5ee360bcb9205938567094.jpg", "qty":"1" },
-{"name": "Ignatus", "description": "Praesentium error asperiores totam unde tempora. Ducimus, facilis tenetur ", "price": "129", "image": "Img-Boutique-e-commerce/5ee37974a8392768642140.jpg", "qty":"1" },
-{"name": "Kabéna", "description": "corrupti maiores illum hic nesciunt adipisci, veniam dolorum repellendus.", "price": "129", "image": "Img-Boutique-e-commerce/5ee3798592e38709377481.jpg", "qty":"1" },
-{"name": "Linéance", "description": "Voluptate ad vero quisquam perferendis eligendi exercitationem excepturi", "price": "129", "image": "Img-Boutique-e-commerce/5ee379e0d9bb0752831433.jpg", "qty":"1" },
-{"name": "Macoumi", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", "price": "129", "image": "Img-Boutique-e-commerce/5ee37eede82e2715823769.jpg", "qty":"1" },
-{"name": "Justine", "description": " voluptates dolorem optio magni neque culpa quam cupiditate", "price": "129", "image": "Img-Boutique-e-commerce/5ee37f02277dd381584179.jpg", "qty":"1" },
-{"name": "Oswald", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", "price": "129", "image": "Img-Boutique-e-commerce/i5ee37f1631254485535614.jpg", "qty":"1" }
+{"name": "Alistair", "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum lorem ilpsum ", "price": "129", "image": "5ee360bcb9205938567094.jpg", "qty":"1" },
+{"name": "Ignatus", "description": "Praesentium error asperiores totam unde tempora. Ducimus, facilis tenetur ", "price": "129", "image": "5ee37974a8392768642140.jpg", "qty":"1" },
+{"name": "Kabéna", "description": "corrupti maiores illum hic nesciunt adipisci, veniam dolorum repellendus.", "price": "129", "image": "5ee3798592e38709377481.jpg", "qty":"1" },
+{"name": "Linéance", "description": "Voluptate ad vero quisquam perferendis eligendi exercitationem excepturi", "price": "129", "image": "5ee379e0d9bb0752831433.jpg", "qty":"1" },
+{"name": "Macoumi", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", "price": "129", "image": "5ee37eede82e2715823769.jpg", "qty":"1" },
+{"name": "Justine", "description": " voluptates dolorem optio magni neque culpa quam cupiditate", "price": "129", "image": "5ee37f02277dd381584179.jpg", "qty":"1" },
+{"name": "Oswald", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", "price": "129", "image": "i5ee37f1631254485535614.jpg", "qty":"1" }
 ]';
 
     public function load(ObjectManager $manager)
