@@ -3,9 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
+ * @Vich\Uploadable()
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
 class Product
@@ -43,9 +48,23 @@ class Product
     private $image;
 
     /**
+     * @Vich\UploadableField(mapping="images", fileNameProperty="Img-Boutique-e-commerce")
+     * @var File
+     */
+    private $imageFile;
+
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $quantity;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
 
     public function getId(): ?int
     {
@@ -112,6 +131,22 @@ class Product
         return $this;
     }
 
+    /**
+     * @return File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File $imageFile
+     */
+    public function setImageFile(?File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+    }
+
     public function getQuantity(): ?int
     {
         return $this->quantity;
@@ -123,4 +158,17 @@ class Product
 
         return $this;
     }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
 }

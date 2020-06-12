@@ -24,6 +24,7 @@ const PRODUCTS = '[
     $products = json_decode(self::PRODUCTS, true);
     foreach ($products as $product){
         $watch = new Product();
+        $r=random_int(0, count(CategoryFixtures::CATEGORIES)-1);
 
 
         $watch->setName($product['name']);
@@ -32,10 +33,19 @@ const PRODUCTS = '[
         $watch->setReference(substr(str_shuffle(md5(random_int(0, 1000000))), 0, 25));
         $watch->setImage($product["image"]);
         $watch->setQuantity($product["qty"]);
+        $watch->setCategory($this->getReference('category_'.$r));
+
 
         $manager->persist($watch);
     }
 
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [
+            CategoryFixtures::class
+        ];
     }
 }

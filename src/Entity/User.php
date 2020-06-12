@@ -134,6 +134,11 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    public function __toString()
+    {
+        return $this->email;
+    }
+
     public function setUsername(string $username): self
     {
         $this->username = $username;

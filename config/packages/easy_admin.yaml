@@ -1,0 +1,44 @@
+easy_admin:
+    # On définit le nom de l'interface d'administration
+    site_name: 'Joseph-Watch e-commerce'
+    # On définit l'affichage de l'utilisateur
+    user:
+        display_name: true
+        display_avatar: false
+    design:
+        form_theme:
+            - "@EasyAdmin/form/bootstrap_4.html.twig"
+        # Ces lignes définiront notre menu
+        menu:
+            - { label: 'Produits' }
+            - { entity: 'Product', label: 'Produit', icon: 'clock' }
+            - { label: 'Utilisateurs' }
+            - { entity: 'User', label: 'Utilisateurs', icon: 'user' }
+    entities:
+        Product:
+            # Correspond au fichier Product.php
+            class: App\Entity\Product
+            # On définit ci-dessous le contenu de la liste qui affichera les articles et les critères de tri
+            list:
+                fields:
+                    - id
+                    - name
+                    # Le champ ci-dessous affichera l'image de product
+                    - { property: 'image', label: 'Image', type: 'image', base_path: '%app.path.images%' }
+                    - { property: 'reference', label: 'réf.' }
+                    - { property: 'price', label: 'prix'}
+                    - { property: 'quantity', label: 'quantité', type: 'int'}
+                    - { property: 'description', label: 'description'}
+
+
+
+        User:
+            class: App\Entity\User
+            label: 'Utilisateurs'
+            list:
+                fields:
+                    - id
+                    - email
+                    - { property: 'roles', label: 'Rôles', type: json_array}
+
+
