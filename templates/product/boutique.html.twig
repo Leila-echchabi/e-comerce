@@ -10,7 +10,7 @@
 
                     <div class="card" style="width: 18rem;">
                         <a class="watch" href="{{ path('detail', {id: watch.id}) }}">
-                            <img src="{{ asset (watch.image) }}" class="card-img-top" alt="{{ watch.name }}">
+                            <img src="{{ vich_uploader_asset (watch, 'imageFile') }}" class="card-img-top" alt="{{ watch.name }}">
                             <div class="card-body">
                                 <p class="card-text text-center">{{ watch.name }}</p>
                                 <p class="text-center">{{watch.price}}€</p>

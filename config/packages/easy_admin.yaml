@@ -4,7 +4,7 @@ easy_admin:
     # On définit l'affichage de l'utilisateur
     user:
         display_name: true
-        display_avatar: false
+        display_avatar: true
     design:
         form_theme:
             - "@EasyAdmin/form/bootstrap_4.html.twig"
@@ -24,12 +24,20 @@ easy_admin:
                     - id
                     - name
                     # Le champ ci-dessous affichera l'image de product
-                    - { property: 'image', label: 'Image', type: 'image', base_path: '%app.path.images%' }
+                    - { property: 'image', type: 'image', base_path: 'Img-Boutique-e-commerce' }
                     - { property: 'reference', label: 'réf.' }
                     - { property: 'price', label: 'prix'}
-                    - { property: 'quantity', label: 'quantité', type: 'int'}
+                    - { property: 'quantity', label: 'quantité'}
                     - { property: 'description', label: 'description'}
-
+            form:
+                fields:
+                    - name
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'reference', label: 'réf.' }
+                    - { property: 'price', label: 'prix'}
+                    - { property: 'quantity', label: 'quantité'}
+                    - { property: 'description', label: 'description'}
+                    - { property: 'category', label: 'categorie'}
 
 
         User:
