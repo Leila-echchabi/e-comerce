@@ -136,6 +136,17 @@ class Product
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Cases::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cases;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Bracelets::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $bracelet;
 
     /**
      * @return File
@@ -200,6 +211,30 @@ class Product
     public function __construct()
     {
         $this->updatedAt=new\DateTime();
+    }
+
+    public function getCases(): ?Cases
+    {
+        return $this->cases;
+    }
+
+    public function setCases(?Cases $cases): self
+    {
+        $this->cases = $cases;
+
+        return $this;
+    }
+
+    public function getBracelet(): ?Bracelets
+    {
+        return $this->bracelet;
+    }
+
+    public function setBracelet(?Bracelets $bracelet): self
+    {
+        $this->bracelet = $bracelet;
+
+        return $this;
     }
 
 }
