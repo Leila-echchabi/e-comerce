@@ -62,7 +62,7 @@ easy_admin:
                               Madame: 'Mme'
                               Autre: 'Autre'
                           multiple: false
-                          expanded: true
+                          expanded: false
                     - email
                     - password
                     - username
