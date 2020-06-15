@@ -53,7 +53,16 @@ easy_admin:
 
             form:
                 fields:
-                    - civility
+                    - property: 'civility'
+                      label: 'civility'
+                      type: 'choice'
+                      type_options:
+                          choices:
+                              Monsieur : 'M.'
+                              Madame: 'Mme'
+                              Autre: 'Autre'
+                          multiple: false
+                          expanded: true
                     - email
                     - password
                     - username

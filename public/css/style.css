@@ -184,10 +184,8 @@
                         text-decoration: none;
                     }
 
-                    .trash {
-                        font-size: 30px;
+                    .fa-trash {
                         color: #c48b21;
-
                     }
 
                     /*FOOTER*/
