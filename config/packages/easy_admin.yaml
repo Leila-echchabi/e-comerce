@@ -57,7 +57,6 @@ easy_admin:
 
             form:
                 fields:
-<<<<<<< HEAD
                     - property: 'civility'
                       label: 'civility'
                       type: 'choice'
@@ -68,11 +67,8 @@ easy_admin:
                               Autre: 'Autre'
                           multiple: false
                           expanded: true
-=======
-                    - { property: 'civility', label: 'Civitité'}
                     - { property: 'firstname', label: 'Prènom'}
                     - { property: 'lastname', label: 'Nom'}
->>>>>>> filtre
                     - email
                     - { property: 'password', label: 'Mot de passe'}
                     -
