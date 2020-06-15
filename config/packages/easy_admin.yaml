@@ -58,11 +58,10 @@ easy_admin:
             form:
                 fields:
                     - { property: 'civility', label: 'Civitité'}
-                    - email
-                    - { property: 'password', label: 'Mot de passe'}
-                    - { property: 'username', label: 'Mom utilisateur'}
                     - { property: 'firstname', label: 'Prènom'}
                     - { property: 'lastname', label: 'Nom'}
+                    - email
+                    - { property: 'password', label: 'Mot de passe'}
                     -
                       property: 'roles'
                       label: 'roles'
