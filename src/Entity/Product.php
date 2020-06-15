@@ -136,6 +136,15 @@ class Product
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $cases;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $bracelet;
 
     /**
      * @return File
@@ -201,5 +210,30 @@ class Product
     {
         $this->updatedAt=new\DateTime();
     }
+
+    public function getCases(): ?string
+    {
+        return $this->cases;
+    }
+
+    public function setCases(string $cases): self
+    {
+        $this->cases = $cases;
+
+        return $this;
+    }
+
+    public function getBracelet(): ?string
+    {
+        return $this->bracelet;
+    }
+
+    public function setBracelet(string $bracelet): self
+    {
+        $this->bracelet = $bracelet;
+
+        return $this;
+    }
+
 
 }
