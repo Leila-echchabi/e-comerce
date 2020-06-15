@@ -39,17 +39,13 @@ class CartController extends AbstractController
         return $this->redirectToRoute("cart");
     }
 
+    /**
+     * @Route("/cart/delete", name="delete_cart")
+     */
+    public function deletePanier(CartService $cartService){
+        $cartService->deletePanier();
+        return $this->redirectToRoute("cart");
+    }
 
-//    public function totalQuantity(CartService $cartService)
-//    {
-//
-//        return $this->render('cart/panier.html.twig', [
-//            'totalQuantity'=> $cartService->getTotalQuantity(),
-//        ]);
-//
-//        return $this->render('base.html.twig', [
-//            'totalQuantity'=> $cartService->getTotalQuantity(),
-//        ]);
-//    }
 
 }
