@@ -42,10 +42,20 @@ class CartController extends AbstractController
     /**
      * @Route("/cart/delete", name="delete_cart")
      */
-    public function deletePanier(CartService $cartService){
+    public function delete(CartService $cartService){
         $cartService->deletePanier();
         return $this->redirectToRoute("cart");
     }
-
+//    public function totalQuantity(CartService $cartService)
+//    {
+//
+//        return $this->render('cart/panier.html.twig', [
+//            'totalQuantity'=> $cartService->getTotalQuantity(),
+//        ]);
+//
+//        return $this->render('base.html.twig', [
+//            'totalQuantity'=> $cartService->getTotalQuantity(),
+//        ]);
+//    }
 
 }

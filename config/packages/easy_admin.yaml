@@ -67,7 +67,7 @@ easy_admin:
                               Autre: 'Autre'
                           multiple: false
                           expanded: true
-                    - { property: 'firstname', label: 'Prènom'}
+                    - { property: 'firstname', label: 'Prénom'}
                     - { property: 'lastname', label: 'Nom'}
                     - email
                     - { property: 'password', label: 'Mot de passe'}
