@@ -61,12 +61,6 @@ class CartService{
         return $total;
     }
 
-//    public function getTotalQuantity() : int {
-//        $totalQuantity = 0;
-//
-//        foreach ($this->getFullCart() as $item){
-//            $totalQuantity += $item['quantity'];
-//        }
-//        return $totalQuantity;
-//    }
+
+
 }

@@ -5,8 +5,10 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,14 +21,31 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('civility', ChoiceType::class,[
+                'label' => 'Civilité',
+                'choices' => [
+                    'M.' => 'Monsieur',
+                    'Mme'=> 'Madame',
+                    'Autre'=>'Autre'
+                ],
+                'choice_label' => function ($choice, $key, $value) {
+                    if (true === $choice) {
+                        return 'Definitely!';
+                    }
+
+                    return ($key);
+
+                }
+            ])
             ->add('firstname', TextType::class, ['label' => 'Prénom'])
             ->add('lastname', TextType::class, ['label'=> 'Nom'])
             ->add( 'email', EmailType::class, ['label'=> 'Email'])
             ->add('agreeTerms', CheckboxType::class, [
+                'label'=> 'Je valide les conditions d\'utilisation',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Merci de valider les conditions d\'utilisation.',
                     ]),
                 ],
             ])
