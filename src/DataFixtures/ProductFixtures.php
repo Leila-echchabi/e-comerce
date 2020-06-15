@@ -40,14 +40,30 @@ const PRODUCTS = '[
 {"name": "Oswald", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", "price": "1500", "image": "5ee37f1631254485535614.jpg", "qty":"1" }
 ]';
 
+const BRACELET = [
+    'Acier',
+    'Or',
+    'Titan',
+    'Cuire',
+    'Céramique',
+    'Caoutchouc'
+];
+
+    const CASES = [
+        'Acier',
+        'Or',
+        'Titan'
+    ];
+
     public function load(ObjectManager $manager)
     {
     $products = json_decode(self::PRODUCTS, true);
     foreach ($products as $product){
         $watch = new Product();
         $r=random_int(0, count(CategoryFixtures::CATEGORIES)-1);
-        $c=random_int(0, count(CasesFixtures::CASES)-1);
-        $b=random_int(0, count(BraceletsFixtures::BRACELET)-1);
+        $c=random_int(0, count(self::CASES)-1);
+        $b=random_int(0, count(self::BRACELET)-1);
+
 
 
         $watch->setName($product['name']);
@@ -57,8 +73,8 @@ const PRODUCTS = '[
         $watch->setImage($product["image"]);
         $watch->setQuantity($product["qty"]);
         $watch->setCategory($this->getReference('category_'.$r));
-        $watch->setCases($this->getReference('cases_'.$c));
-        $watch->setBracelet($this->getReference('bracelet_'.$b));
+        $watch->setCases(self::CASES[$c]);
+        $watch->setBracelet(self::BRACELET[$b]);
 
         $manager->persist($watch);
     }

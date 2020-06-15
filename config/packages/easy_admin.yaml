@@ -30,15 +30,19 @@ easy_admin:
                     - { property: 'price', label: 'prix'}
                     - { property: 'quantity', label: 'quantité'}
                     - { property: 'description', label: 'description'}
+                    - { property: 'cases', label: 'boitîer'}
+                    - bracelet
             form:
                 fields:
                     - name
                     - { property: 'imageFile', type: 'vich_image' }
-                    - { property: 'reference', label: 'réf.' }
-                    - { property: 'price', label: 'prix'}
-                    - { property: 'quantity', label: 'quantité'}
-                    - { property: 'description', label: 'description'}
-                    - { property: 'category', label: 'categorie'}
+                    - { property: 'reference', label: 'Réf.' }
+                    - { property: 'price', label: 'Prix'}
+                    - { property: 'quantity', label: 'Quantité'}
+                    - { property: 'description', label: 'Description'}
+                    - { property: 'category', label: 'Categorie'}
+                    - { property: 'cases', label: 'Boitîer'}
+                    - bracelet
 
 
         User:
@@ -53,12 +57,12 @@ easy_admin:
 
             form:
                 fields:
-                    - civility
+                    - { property: 'civility', label: 'Civitité'}
                     - email
-                    - password
-                    - username
-                    - firstname
-                    - lastname
+                    - { property: 'password', label: 'Mot de passe'}
+                    - { property: 'username', label: 'Mom utilisateur'}
+                    - { property: 'firstname', label: 'Prènom'}
+                    - { property: 'lastname', label: 'Nom'}
                     -
                       property: 'roles'
                       label: 'roles'

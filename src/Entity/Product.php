@@ -137,14 +137,12 @@ class Product
     private $updatedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Cases::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=30)
      */
     private $cases;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Bracelets::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=30)
      */
     private $bracelet;
 
@@ -213,28 +211,29 @@ class Product
         $this->updatedAt=new\DateTime();
     }
 
-    public function getCases(): ?Cases
+    public function getCases(): ?string
     {
         return $this->cases;
     }
 
-    public function setCases(?Cases $cases): self
+    public function setCases(string $cases): self
     {
         $this->cases = $cases;
 
         return $this;
     }
 
-    public function getBracelet(): ?Bracelets
+    public function getBracelet(): ?string
     {
         return $this->bracelet;
     }
 
-    public function setBracelet(?Bracelets $bracelet): self
+    public function setBracelet(string $bracelet): self
     {
         $this->bracelet = $bracelet;
 
         return $this;
     }
+
 
 }
