@@ -30,15 +30,19 @@ easy_admin:
                     - { property: 'price', label: 'prix'}
                     - { property: 'quantity', label: 'quantité'}
                     - { property: 'description', label: 'description'}
+                    - { property: 'cases', label: 'boitîer'}
+                    - bracelet
             form:
                 fields:
                     - name
                     - { property: 'imageFile', type: 'vich_image' }
-                    - { property: 'reference', label: 'réf.' }
-                    - { property: 'price', label: 'prix'}
-                    - { property: 'quantity', label: 'quantité'}
-                    - { property: 'description', label: 'description'}
-                    - { property: 'category', label: 'categorie'}
+                    - { property: 'reference', label: 'Réf.' }
+                    - { property: 'price', label: 'Prix'}
+                    - { property: 'quantity', label: 'Quantité'}
+                    - { property: 'description', label: 'Description'}
+                    - { property: 'category', label: 'Categorie'}
+                    - { property: 'cases', label: 'Boitîer'}
+                    - bracelet
 
 
         User:
@@ -53,6 +57,7 @@ easy_admin:
 
             form:
                 fields:
+<<<<<<< HEAD
                     - property: 'civility'
                       label: 'civility'
                       type: 'choice'
@@ -63,11 +68,13 @@ easy_admin:
                               Autre: 'Autre'
                           multiple: false
                           expanded: true
+=======
+                    - { property: 'civility', label: 'Civitité'}
+                    - { property: 'firstname', label: 'Prènom'}
+                    - { property: 'lastname', label: 'Nom'}
+>>>>>>> filtre
                     - email
-                    - password
-                    - username
-                    - firstname
-                    - lastname
+                    - { property: 'password', label: 'Mot de passe'}
                     -
                       property: 'roles'
                       label: 'roles'
