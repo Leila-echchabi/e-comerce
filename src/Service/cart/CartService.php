@@ -2,6 +2,7 @@
 
 namespace App\Service\cart;
 
+use App\Entity\User;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -61,16 +62,16 @@ class CartService{
         return $total;
     }
 
-//    public function getTotalQuantity() : int {
-//        $totalQuantity = 0;
-//
-//        foreach ($this->getFullCart() as $item){
-//            $totalQuantity += $item['quantity'];
-//        }
-//        return $totalQuantity;
-//    }
+    public function getTotalQuantity() : int {
+        $totalQuantity = 0;
 
-    public function deletePanier(){
+        foreach ($this->getFullCart() as $item){
+            $totalQuantity += $item['quantity'];
+        }
+        return $totalQuantity;
+    }
+
+    public function deleteCart(){
 
         if(!empty($panier)){
             unset($panier);

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
 use App\Service\cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,7 +44,7 @@ class CartController extends AbstractController
      * @Route("/cart/delete", name="delete_cart")
      */
     public function delete(CartService $cartService){
-        $cartService->deletePanier();
+        $cartService->deleteCart();
         return $this->redirectToRoute("cart");
     }
 //    public function totalQuantity(CartService $cartService)
@@ -57,5 +58,20 @@ class CartController extends AbstractController
 //            'totalQuantity'=> $cartService->getTotalQuantity(),
 //        ]);
 //    }
+
+    /**
+     * @param User        $user
+     * @param CartService $cartService
+     * @Route("/cart/validate", name="validate_cart")
+     */
+    public function validateCart(CartService $cartService){
+        if(isset($_POST['valider']) && isset($panier)){
+            $user = $this->getUser();
+            $montantTotal = $cartService->getTotal();
+            $cartService->getFullCart();
+
+            return $this->redirectToRoute("boutique");
+        };
+    }
 
 }

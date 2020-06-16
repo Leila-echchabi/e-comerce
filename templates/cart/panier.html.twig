@@ -60,7 +60,27 @@
 
                     </div>
 
-                    <a href="{{ path('delete_cart') }}" class="btn btn-danger">Vider le Panier</a>
+                    {% if items | length > 0  %}
+
+                        {% if is_granted('IS_ANONYMOUS') %}
+                            <div class="row justify-content-center">
+                                Veuillez vous <a href="{{ path('app_login') }}">connecter</a> ou vous <a href="{{ path
+                                    ('app_register')}}">inscrire</a> afin de pouvoir valider le panier.
+                            </div>
+                        {% else %}
+                            <div class="row justify-content-end">
+                                    <form action="{{ path('validate_cart') }}" method="post">
+                                    <input type="submit" name="valider" value="Valider le panier" class="btn
+                                    btn-success">
+                                </form>
+                            </div>
+                        {% endif%}
+
+                        <div class="row justify-content-start">
+                            <a href="{{ path('delete_cart') }}" class="btn btn-danger">Vider le Panier</a>
+                        </div>
+
+                    {% endif %}
 
                 </div> <!-- fin panier -->
 
