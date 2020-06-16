@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Service\cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
@@ -17,8 +18,7 @@ class CartController extends AbstractController
     {
 
         return $this->render('cart/panier.html.twig', [
-            'items'=> $cartService->getFullCart(),
-            'total'=>$cartService->getTotal()
+            'cart_service'=>$cartService
         ]);
     }
 
@@ -60,18 +60,23 @@ class CartController extends AbstractController
 //    }
 
     /**
-     * @param User        $user
+     * @param Request     $request
      * @param CartService $cartService
      * @Route("/cart/validate", name="validate_cart")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function validateCart(CartService $cartService){
-        if(isset($_POST['valider']) && isset($panier)){
+
+    public function validateCart(Request $request, CartService $cartService){
+
+        if($request->isMethod('POST')){
             $user = $this->getUser();
             $montantTotal = $cartService->getTotal();
             $cartService->getFullCart();
-
-            return $this->redirectToRoute("boutique");
         };
+        return $this->render('payment/payment.html.twig', array(
+            'user'=> $this->getUser(),
+            'cart_service'=>$cartService
+        ));
     }
 
 }
