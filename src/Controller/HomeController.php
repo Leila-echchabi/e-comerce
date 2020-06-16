@@ -13,7 +13,7 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('home/payment.html.twig', [
+        return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
@@ -37,17 +37,6 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
-    /**
-     * @Route("contact", name="contact")
-     */
-    public function contact()
-    {
-        return $this->render('home/contact.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
 
     public function logToAdmin(){
         return $this->render('/admin', [
