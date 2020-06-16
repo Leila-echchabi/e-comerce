@@ -38,17 +38,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("contact", name="contact")
-     */
-    public function contact()
-    {
-        return $this->render('home/contact.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
-
     public function logToAdmin(){
         return $this->render('/admin', [
             'controller_name' => 'SecurityController',
