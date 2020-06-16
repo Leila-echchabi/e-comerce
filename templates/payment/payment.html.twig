@@ -5,22 +5,56 @@
 {% block main %}
     <main>
         <div class="container">
-            <form action="{{ path('payment') }}" method="post" id="payment-form">
-                <div class="">
-                    <label for="card-element">
-                        Credit or debit card
-                    </label>
 
-                    <!-- placeholder for Elements -->
-                    <div id="card-element"></div>
-                    <button id="card-button" data-secret="{{ intent.client_secret }}">
-                        Submit Payment
-                    </button>
+            <h3>Coordonnées</h3>
 
-                    <!-- Used to display Element errors. -->
-                    <div id="card-errors" role="alert"></div>
+            {{ form_start(FormPayment) }}
+            {{ form_row(FormPayment). }}
+
+            <div class="row">
+                <div class="col-6">
+                    <form>
+                        <div>
+                            <div><label for="lastname">Nom : </label></div>
+                            <div><input type="text" id="lastname" ></div>
+                        </div>
+                        <div>
+                            <div><label for="firstname">Prénom : </label></div>
+                            <div><input type="text" id="firstname"></div>
+                        </div>
+                        <div>
+                            <div><label for="email">Email : </label></div>
+                            <div><input type="email" id="email"></div>
+                        </div>
+                        <div>
+                            <div><label for="adresse">Adresse : </label></div>
+                            <div><input type="text" id="adresse"></div>
+                        </div>
+
+                    </form>
                 </div>
-            </form>
+
+                <div class="col-6 mt-5">
+                    <form action="{{ path('payment') }}" method="post" id="payment-form">
+                        <div class="">
+                            <label for="card-element">
+                                Credit or debit card
+                            </label>
+
+                            <!-- placeholder for Elements -->
+                            <div id="card-element"></div>
+
+
+                            <button class="mt-5" id="card-button" data-secret="{{ intent.client_secret }}">
+                                    Submit Payment
+                            </button>
+
+                            <!-- Used to display Element errors. -->
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
 

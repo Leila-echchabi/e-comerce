@@ -2,17 +2,24 @@
 
 namespace App\Controller;
 
+use App\Entity\Customer;
+use App\Entity\User;
+use App\Form\FormPaymentType;
+use App\Form\RegistrationFormType;
+use App\Security\UserAuthenticator;
 use App\Service\cart\CartService;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class PaymentController extends AbstractController
 {
-
-
     /**
      * @param Request     $request
      * @param CartService $cartService
@@ -21,6 +28,7 @@ class PaymentController extends AbstractController
      * @throws \Stripe\Exception\ApiErrorException
      */
     public function paymentCart(Request $request, CartService $cartService){
+        
         $products = $cartService->getFullCart();
         if ($request->isMethod('POST')){
             $token = $request->get('stripeToken');
@@ -52,7 +60,6 @@ class PaymentController extends AbstractController
      * @throws \Stripe\Exception\ApiErrorException
      */
     public function intent(CartService $cartService)
-
     {
         Stripe::setApiKey('sk_test_51GuPf9FpvzVGjfHUiIh0BDP7ke1XbaPTUZVY55LxWeCVkgqVe51WIC5288XRlHIM2CgmZ9S3HqVOlIMqlyWFvuy300b6BA63PV');
 

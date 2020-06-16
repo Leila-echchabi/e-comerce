@@ -56,6 +56,11 @@ class User implements UserInterface
      */
     private $civility;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Customer::class, mappedBy="userid", cascade={"persist", "remove"})
+     */
+    private $customer;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -146,6 +151,9 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @see UserInterface
+     */
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -178,6 +186,23 @@ class User implements UserInterface
     public function setCivility(?string $civility): self
     {
         $this->civility = $civility;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        // set the owning side of the relation if necessary
+        if ($customer->getUserid() !== $this) {
+            $customer->setUserid($this);
+        }
 
         return $this;
     }
