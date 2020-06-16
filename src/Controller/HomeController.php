@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class HomeController extends AbstractController
 {
     /**
@@ -46,4 +47,12 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+
+    public function logToAdmin(){
+        return $this->render('/admin', [
+            'controller_name' => 'SecurityController',
+        ]);
+    }
+
 }
