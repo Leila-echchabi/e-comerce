@@ -3,7 +3,4 @@ twig:
     form_themes: ['bootstrap_4_layout.html.twig']
     paths:
         '%kernel.project_dir%/vendor/knplabs/knp-paginator-bundle/templates': KnpPaginator
-<<<<<<< HEAD
 
-=======
->>>>>>> 65d94ca5f82c00d8f681330dd2bc1bb90d219bb2
