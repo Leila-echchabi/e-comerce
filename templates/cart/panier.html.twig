@@ -11,7 +11,7 @@
 
                 <div class="panier">
                     <div class="contenu-panier">
-                        {% if items | length > 0 %}
+                        {% if cart_service.fullCart | length > 0 %}
                             <table class="table text-center">
                             <thead>
                             <tr>
@@ -24,7 +24,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {% for item in items %}
+                            {% for item in cart_service.fullCart %}
                                 <tr>
                                     <td align-middle>
                                         <a class="img-fluid" href="{{ path('detail', {id: item.watch.id}) }}">
@@ -50,7 +50,7 @@
                             </tbody>
                                 <tfoot>
                                 <td colspan="4" class="text-right">Total : </td>
-                                <td>{{ total }}</td>
+                                <td>{{ cart_service.total }}</td>
                                 <td></td>
                                 </tfoot>
                             </table>
@@ -60,7 +60,26 @@
 
                     </div>
 
-                    <a href="{{ path('delete_cart') }}" class="btn btn-danger">Vider le Panier</a>
+                    {% if cart_service.fullCart | length > 0  %}
+
+                        {% if is_granted('IS_ANONYMOUS') %}
+                            <div class="row justify-content-center">
+                                Veuillez vous <a href="{{ path('app_login') }}">connecter</a> ou vous <a href="{{ path
+                                    ('app_register')}}">inscrire</a> afin de pouvoir valider le panier.
+                            </div>
+                        {% else %}
+                            <div class="row justify-content-end">
+                                <a class="btn btn-success" href="{{ path('intent') }}">
+                                   Valider le panier
+                                </a>
+                            </div>
+                        {% endif%}
+
+                        <div class="row justify-content-start">
+                            <a href="{{ path('delete_cart') }}" class="btn btn-danger">Vider le Panier</a>
+                        </div>
+
+                    {% endif %}
 
                 </div> <!-- fin panier -->
 

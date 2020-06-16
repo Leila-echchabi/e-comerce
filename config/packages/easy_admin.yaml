@@ -43,8 +43,6 @@ easy_admin:
                     - { property: 'category', label: 'Categorie'}
                     - { property: 'cases', label: 'Boitîer'}
                     - bracelet
-
-
         User:
             class: App\Entity\User
             label: 'Utilisateurs'
@@ -54,7 +52,6 @@ easy_admin:
                     - email
                     - { property: 'roles', label: 'Rôles', type: json_array}
 
-
             form:
                 field:
                     - property: 'civility'
@@ -62,22 +59,23 @@ easy_admin:
                       type: 'choice'
                       type_options:
                           choices:
-                              Monsieur : 'M.'
-                              Madame: 'Mme'
-                              Autre: 'Autre'
+                            Monsieur: 'M.'
+                            Madame: 'Mme'
+                            Autre: 'Autre'
                           multiple: false
                           expanded: true
                     - { property: 'firstname', label: 'Prénom'}
                     - { property: 'lastname', label: 'Nom'}
                     - email
                     - { property: 'password', label: 'Mot de passe'}
-                    -
-                      property: 'roles'
+                    - property: 'roles'
                       label: 'roles'
                       type: 'choice'
                       type_options:
                           choices:
-                              Utilisateur: 'ROLE_USER'
-                              Administrateur: 'ROLE_ADMIN'
+                            Utilisateur: 'ROLE_USER'
+                            Administrateur: 'ROLE_ADMIN'
                           multiple: true
                           expanded: true
+
+
