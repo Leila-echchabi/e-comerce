@@ -52,7 +52,6 @@ easy_admin:
                     - email
                     - { property: 'roles', label: 'Rôles', type: json_array}
 
-
             form:
                 field:
                     - property: 'civility'
