@@ -56,7 +56,11 @@ easy_admin:
 
 
             form:
+<<<<<<< HEAD
                 fields:
+=======
+                field:
+>>>>>>> 65d94ca5f82c00d8f681330dd2bc1bb90d219bb2
                     - property: 'civility'
                       label: 'civilité'
                       type: 'choice'

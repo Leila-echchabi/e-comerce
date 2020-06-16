@@ -98,8 +98,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/stripe/stripe-php" />
-      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
-      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
 </project>
