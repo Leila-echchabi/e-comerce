@@ -53,6 +53,21 @@ class CartService{
         return $panierWithData;
     }
 
+    public function getDetailCart() : array{
+
+        $panier = $this->session->get('panier',[]);
+        $panierWithData = [];
+
+        foreach ($panier as $id => $quantity){
+            $panierWithDatail[] = [
+                'watch.name'=> $this->productRepository->find($id)->getName(),
+                'watch.price'=>$this->productRepository->find($id)->getPrice(),
+                'quantity'=>$quantity
+            ];
+        }
+        return $panierWithDatail;
+    }
+
     public function getTotal() : float{
         $total = 0;
 
