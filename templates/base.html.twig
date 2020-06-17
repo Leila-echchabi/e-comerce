@@ -18,6 +18,8 @@
 
     <!-- CSS   -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block stripe %}
+    {% endblock %}
 </head>
 
 
@@ -62,7 +64,9 @@
 
                     <li class="nav-item">
                         <a class="nav-link white" href="{{ path('cart') }}">
-                            <i class="fas fa-shopping-bag"><span class='nb'></span></i>
+                            <i class="fas fa-shopping-bag"><span class='nb'>{{
+                                cart_service.totalQuantity }}</span>
+                            </i>
                         </a>
                     </li>
 
