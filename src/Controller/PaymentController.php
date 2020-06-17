@@ -39,9 +39,8 @@ class PaymentController extends AbstractController
      * @return Response
      * @throws \Stripe\Exception\ApiErrorException
      */
-    public function intent(Request $request, CartService $cartService, EntityManagerInterface $em)
+    public function intent(Request $request, CartService $cartService)
     {
-        $order = $this->createOrder($request,$cartService,$em);
         $form = $this->createForm(PaymentFormType::class);
         $form->handleRequest($request);
 
@@ -57,8 +56,7 @@ class PaymentController extends AbstractController
 
         return $this->render('payment/payment.html.twig', array(
             'paymentForm' => $form->createView(),
-            'intent'=>$intent,
-            'order'=>$order
+            'intent'=>$intent
         ));
     }
 
@@ -66,12 +64,13 @@ class PaymentController extends AbstractController
      * @param Request     $request
      * @param CartService $cartService
      * @Route("/payment", name="payment")
+     * @Route("/profile", name="profile")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @throws \Stripe\Exception\ApiErrorException
      */
-    public function paymentCart(Request $request, CartService $cartService){
+    public function paymentCart(Request $request, CartService $cartService, EntityManagerInterface $em){
 
-        $products = $cartService->getFullCart();
+        $order = $this->createOrder($request,$cartService,$em);
         if ($request->isMethod('POST')){
             $token = $request->get('stripeToken');
 
@@ -87,11 +86,12 @@ class PaymentController extends AbstractController
             $cartService->deleteCart();
             $this->addFlash('success', 'Commande validée');
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('profile');
         }
 
-        return $this->render('payment/payment.html.twig', array(
-            'cart_service'=>$cartService
+        return $this->render('user/profile.html.twig', array(
+            'cart_service'=>$cartService,
+            'order'=>$order
         ));
     }
 

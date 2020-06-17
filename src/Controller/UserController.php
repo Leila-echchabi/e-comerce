@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Order;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,5 +24,14 @@ class UserController extends AbstractController
         return $this->render('user/profile.html.twig', [
             'user' => $user,
         ]);
+    }
+
+    public function orders (){
+        $this->getOrders();
+        return $this->render('user/profile.html.twig', [
+            'orders' => $this->getOrders(),
+        ]);
+
+
     }
 }
