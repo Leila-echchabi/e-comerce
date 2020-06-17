@@ -48,17 +48,6 @@ class CartController extends AbstractController
         $cartService->deleteCart();
         return $this->redirectToRoute("cart");
     }
-//    public function totalQuantity(CartService $cartService)
-//    {
-//
-//        return $this->render('cart/panier.html.twig', [
-//            'totalQuantity'=> $cartService->getTotalQuantity(),
-//        ]);
-//
-//        return $this->render('base.html.twig', [
-//            'totalQuantity'=> $cartService->getTotalQuantity(),
-//        ]);
-//    }
 
     /**
      * @param Request     $request
@@ -76,7 +65,8 @@ class CartController extends AbstractController
         };
         return $this->render('payment/payment.html.twig', array(
             'user'=> $this->getUser(),
-            'cart_service'=>$cartService
+            'cart_service'=>$cartService,
+            'details'=>$cartService->getDetailCart()
         ));
     }
 

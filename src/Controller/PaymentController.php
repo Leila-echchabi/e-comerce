@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Customer;
+
+use App\Entity\Order;
 use App\Form\FormPaymentType;
 use App\Form\PaymentFormType;
 use App\Service\cart\CartService;
+use Doctrine\ORM\EntityManagerInterface;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,6 +17,51 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PaymentController extends AbstractController
 {
+
+    public function createOrder(Request $request, CartService $cartService, EntityManagerInterface $em){
+        $items = $cartService->getFullCart();
+
+        $order = new Order();
+        $order->setNumber('ORDER');
+        $order->setDate(new \DateTime());
+        $order->setAmount($cartService->getTotal());
+        $order->setDetails($cartService->getDetailCart());
+        $order->setUserId($this->getUser());
+
+        $em->persist($order);
+        $em->flush();
+    }
+
+    /**
+     * @param CartService $cartService
+     * @param Request     $request
+     *@Route("/intent", name="intent")
+     * @return Response
+     * @throws \Stripe\Exception\ApiErrorException
+     */
+    public function intent(Request $request, CartService $cartService, EntityManagerInterface $em)
+    {
+        $order = $this->createOrder($request,$cartService,$em);
+        $form = $this->createForm(PaymentFormType::class);
+        $form->handleRequest($request);
+
+        Stripe::setApiKey('sk_test_51GtkFUFdOQZQgragxcsaXkplUjYJ4Cd4Ai6FJ8YW2B8rPgYNnBN0VtKBdZoOfiPmtVW7oNXW9aK1AcGdUDnmNPth00k8tdKlXT');
+
+//        $token = $_POST['stripeToken'];
+        $intent = PaymentIntent::create([
+            'amount' =>  $cartService->getTotal()*100,
+            'currency' => 'eur',
+            'metadata' => ['integration_check' => 'accept_a_payment'],
+
+        ]);
+
+        return $this->render('payment/payment.html.twig', array(
+            'paymentForm' => $form->createView(),
+            'intent'=>$intent,
+            'order'=>$order
+        ));
+    }
+
     /**
      * @param Request     $request
      * @param CartService $cartService
@@ -45,34 +92,6 @@ class PaymentController extends AbstractController
 
         return $this->render('payment/payment.html.twig', array(
             'cart_service'=>$cartService
-        ));
-    }
-
-    /**
-     * @param CartService $cartService
-     * @param Request     $request
-     *@Route("/intent", name="intent")
-     * @return Response
-     * @throws \Stripe\Exception\ApiErrorException
-     */
-    public function intent(CartService $cartService, Request $request)
-    {
-        $form = $this->createForm(PaymentFormType::class);
-        $form->handleRequest($request);
-
-        Stripe::setApiKey('sk_test_51GtkFUFdOQZQgragxcsaXkplUjYJ4Cd4Ai6FJ8YW2B8rPgYNnBN0VtKBdZoOfiPmtVW7oNXW9aK1AcGdUDnmNPth00k8tdKlXT');
-
-//        $token = $_POST['stripeToken'];
-        $intent = PaymentIntent::create([
-            'amount' =>  $cartService->getTotal()*100,
-            'currency' => 'eur',
-            'metadata' => ['integration_check' => 'accept_a_payment'],
-
-        ]);
-
-        return $this->render('payment/payment.html.twig', array(
-            'paymentForm' => $form->createView(),
-            'intent'=>$intent
         ));
     }
 
