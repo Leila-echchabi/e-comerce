@@ -145,7 +145,9 @@ class User implements UserInterface
 
         return $this;
     }
-
+    /**
+     * @see UserInterface
+     */
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -158,6 +160,9 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @see UserInterface
+     */
     public function getLastname(): ?string
     {
         return $this->lastname;
@@ -181,4 +186,5 @@ class User implements UserInterface
 
         return $this;
     }
+
 }

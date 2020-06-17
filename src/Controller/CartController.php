@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class CartController extends AbstractController
 {
     /**
@@ -18,7 +19,7 @@ class CartController extends AbstractController
     {
 
         return $this->render('cart/panier.html.twig', [
-            'cart_service'=>$cartService
+            'cart_service'=>$cartService,
         ]);
     }
 
