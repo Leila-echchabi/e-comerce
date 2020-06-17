@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <h1 class="mt-2">Bonjour {{ user.firstname }} {{ user.lastname }}</h1>
+
+
+        <div class="row">
+            <div class="col-6 mt-1">
+                <h2>Vos coordonées</h2>
+                {{ user.civility }}
+                <p>Prénom: {{ user.firstname }}</p>
+                <p>Nom: {{ user.lastname }}</p>
+                <p>E-mail: {{user.email}}</p>
+
+                <a href="#" class="btn btn-info mb-1">Modifier les coordonées</a>
+                <p><a href="{{ path('app_forgot_password_request') }}">Modifier mot de passe</a></p>
+
+            </div>
+{#            <div class="col-6 mt-1">#}
+{#                <h2>Votre adresse de livraison</h2>#}
+{#                <p>Rue</p>#}
+{#                <p>Code</p>#}
+{#                <p>Ville</p>#}
+{#                <a href="#" class="btn btn-info mb-1">Modifier l'adresse</a>#}
+
+{#                <h2>Votre adresse de facturation</h2>#}
+{#                <p>Rue</p>#}
+{#                <p>Code</p>#}
+{#                <p>Ville</p>#}
+{#                <a href="#" class="btn btn-info mb-1">Modifier l'adresse</a>#}
+{#            </div>#}
+
+            <div class="col-12">
+                <h1>Vos commandes</h1>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+{% endblock %}

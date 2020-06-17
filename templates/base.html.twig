@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    {% set links = {home : "Accueil", boutique : "boutique", a_propos : "à propos", faq:"faq", contact:"contact"} %}
+                    {% set links = {home : "Accueil", boutique : "boutique", a_propos : "à propos", faq:"faq", contact:"contact",} %}
                     {% for route,label in links %}
                     <li class="nav-item {% if app.request.get("_route") == route %} active{% endif %}">
                         <a class="nav-link white" href="{{ path(route) }}">{{ label }}{% if app.request.get("_route") == route %}<span class="sr-only">(current)</span>{% endif %}</a>
@@ -49,6 +49,9 @@
                             <a class="nav-link" href="{{ path('easyadmin') }}">Admin</a>
                         </li>
                         {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('profile') }}">Profile</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}"><i class="fas fa-user"></i>Se
                                 déconnecter</a>
