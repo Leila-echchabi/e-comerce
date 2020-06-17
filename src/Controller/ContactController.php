@@ -25,7 +25,7 @@ class ContactController extends AbstractController
                 ->setTo('josephwatch@outlook.fr')
                 ->setBody(
                     $this->renderView(
-                        'emails/emailContact.html.twig', compact('contact')
+                        'email/emailContact.html.twig', compact('contact')
                     ),
                     'text/html'
                 )
@@ -34,9 +34,20 @@ class ContactController extends AbstractController
             $swift_Mailer->send($message);
 
             $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
+            return $this->redirectToRoute('confirmation');
 
         }
         return $this->render('contact/contact.html.twig',['contactForm' => $form->createView()]);
+    }
+
+    /**
+     * @Route("contact/confirmation", name="confirmation")
+     */
+    public function contact()
+    {
+        return $this->render('contact/contactConfirmation.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
     }
 
 }
