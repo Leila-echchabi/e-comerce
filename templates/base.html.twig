@@ -36,7 +36,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    {% set links = {home : "Accueil", boutique : "boutique", a_propos : "à propos", faq:"faq", contact:"contact",} %}
+                    {% set links = {home : "Accueil", boutique : "boutique", a_propos : "à propos", contact:"contact",} %}
                     {% for route,label in links %}
                     <li class="nav-item {% if app.request.get("_route") == route %} active{% endif %}">
                         <a class="nav-link white" href="{{ path(route) }}">{{ label }}{% if app.request.get("_route") == route %}<span class="sr-only">(current)</span>{% endif %}</a>
@@ -46,23 +46,22 @@
                     {% if is_granted('IS_AUTHENTICATED_FULLY')%}
                         {% if 'ROLE_ADMIN' in app.user.roles %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('easyadmin') }}">Admin</a>
+                            <a class="nav-link white" href="{{ path('easyadmin') }}">Admin</a>
                         </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('profil') }}">Profil</a>
+                            <a class="nav-link white" href="{{ path('profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_logout') }}"><i class="fas fa-user"></i> Se
+                            <a class="nav-link white" href="{{ path('app_logout') }}"><i class="fas fa-user"></i>Se
                                 déconnecter</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_login') }}"><i class="fas fa-user"></i> Se
-                                connecter</a>
+                            <a class="nav-link white" href="{{ path('app_login') }}"><i class="fas fa-user"></i>Se connecter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+                            <a class="nav-link white" href="{{ path('app_register') }}">S'inscrire</a>
                         </li>
                     {% endif %}
 

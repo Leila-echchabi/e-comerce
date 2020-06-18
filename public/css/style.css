@@ -39,12 +39,14 @@
                     }
                     
                     header nav a:hover {
-                        color: #c48b21;
+                        color: #c48b21 !important;
                     }
-                    
-                    nav .fa-shopping-bag{
+                    nav .fa-shopping-bag {
                         border-left: 1px solid black;
                         border-right: 1px solid black;
+                    }
+
+                    nav .fas{
                         padding-left: 20px;
                         padding-right: 20px;
                     }
@@ -119,14 +121,7 @@
                         margin: 30px auto;
                         border: none;
                     }
-                    
-                    .watch :hover {
-                        transform: scale(1.05);
-                        transition: all 0.5s ease-in-out;
-                        overflow: hidden;
-                        box-shadow: 5px 5px 5px rgba(38, 38, 38, 1);
-                    }
-                    
+
                     .boutiqueCard a {
                         text-decoration: none;
                         color: #000;
@@ -147,31 +142,31 @@
     display: none;
 } */
                     
-                    main div#shoppingCart div.contenu-panier div#cart {
+                    main div #shoppingCart div .contenu-panier div #cart {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
                         margin-bottom: 2px;
                     }
                     
-                    main div#shoppingCart button {
+                    main div #shoppingCart button {
                         border-radius: 5px;
                         padding: 5px 25px;
                     }
                     
-                    main div#shoppingCart button:hover {
+                    main div #shoppingCart button:hover {
                         color: #fff;
                         background-color: #c48b21;
                         border: 2px solid #c48b21;
                         text-decoration: none;
                     }
                     
-                    main div#shoppingCart div.totalPrice {
+                    main div #shoppingCart div.totalPrice {
                         display: flex;
                         justify-content: space-between;
                     }
                     
-                    main div#shoppingCart button.buy {
+                    main div #shoppingCart button.buy {
                         color: #fff;
                         border-radius: 5px;
                         padding: 5px 25px;
@@ -179,7 +174,7 @@
                         border: 2px solid green;
                     }
                     
-                    main div#shoppingCart button.buy:hover {
+                    main div #shoppingCart button.buy:hover {
                         background-color: darkgreen;
                         border: 2px solid darkgreen;
                         text-decoration: none;
@@ -239,14 +234,6 @@
                         color: #c48b21;
                         font-weight: bold;
                     }
-                    /* #panier {
-                        background-color: rgba(0, 0, 0, 0.5);
-                        width: 100%;
-                        height: 100vh;
-                        color: #fff;
-                        padding: 3rem;
-                        position: absolute;
-                    } */
                     /* responsive */
                     
                     @media screen and (max-width: 991px) {
@@ -257,49 +244,4 @@
                             z-index: 999;
                             background-color: rgba(0, 0, 0, 0.5);
                         }
-                    }
-                    /* css d'alex */
-                    
-                    .faqHeader {
-                        font-family: 'Fredericka the Great', cursive;
-                        margin-bottom: 1.5rem;
-                        text-shadow: 5px 5px 5px #262626;
-                        font-size: 27px;
-                        margin: 20px;
-                
-                    }
-                    .alert-dismissible{
-                        background-color: white;
-                    }
-                    .accordion-toggle{
-                        color: #000;
-                    }
-                    .faqHeader{
-                        color:#000; 
-                    }
-                    
-                    ​ .panel-heading [data-toggle="collapse"]:after {
-                        font-family: 'Fredericka the Great', cursive;
-                        content: "/e072";
-                        /* "play" icon */
-                        float: right;
-                        color: #c48b21;
-                        font-size: 1, 2rem;
-                        line-height: 1, 2;
-                        /* rotate "play" icon from > (right arrow) to down arrow */
-                        -webkit-transform: rotate(-90deg);
-                        -moz-transform: rotate(-90deg);
-                        -ms-transform: rotate(-90deg);
-                        -o-transform: rotate(-90deg);
-                        transform: rotate(-90deg);
-                    }
-                    
-                    ​ .panel-heading [data-toggle="collapse"].collapsed:after {
-                        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
-                        -webkit-transform: rotate(90deg);
-                        -moz-transform: rotate(90deg);
-                        -ms-transform: rotate(90deg);
-                        -o-transform: rotate(90deg);
-                        transform: rotate(90deg);
-                        color: #454444;
                     }
