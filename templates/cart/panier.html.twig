@@ -28,17 +28,17 @@
                             <tbody>
                             {% for item in cart_service.fullCart %}
                                 <tr>
-                                    <td align-middle>
+                                    <td>
                                         <a class="img-fluid" href="{{ path('detail', {id: item.watch.id}) }}">
                                             <img src="{{ vich_uploader_asset (item.watch, 'imageFile') }}"
                                                  class="img-fluid"
                                                  alt="{{ item.watch.name }}" width="80 px">
                                         </a>
                                     </td>
-                                    <td align-middle>{{ item.watch.name }}</td>
-                                    <td align-middle>{{ item.watch.price }}</td>
-                                    <td align-middle>{{ item.quantity }}</td>
-                                    <td align-middle>{{ item.watch.price * item.quantity }}</td>
+                                    <td>{{ item.watch.name }}</td>
+                                    <td>{{ item.watch.price }}€</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>{{ item.watch.price * item.quantity }}€</td>
                                     <td>
                                         <a href="{{path('remove_cart', {'id' : item.watch.id})}}" class="btn btn-sm
                                         trash">
@@ -52,7 +52,7 @@
                             </tbody>
                                 <tfoot>
                                 <td colspan="4" class="text-right">Total : </td>
-                                <td>{{ cart_service.total }}</td>
+                                <td>{{ cart_service.total }} €</td>
                                 <td></td>
                                 </tfoot>
                             </table>

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la commande {% endblock %}
+
+{% block main %}
+    <main>
+        <div class="container">
+            <h1> Commande ref:{{ order.number }}</h1>
+            <table class="table">
+                <thead>
+                <tr class="align-middle">
+                    <th class="align-middle">Date</th>
+                    <th class="align-middle">Réference</th>
+                    <th class="align-middle">Montant</th>
+                    <th class="align-middle">Détails</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for detail in order.details %}
+                    <tr>
+                        <td> {{ detail["watch.name"] }}</td>
+                        <td>{{ detail["watch.price"] }}</td>
+                        <td>{{ detail.quantity }}</td>
+                        <td>{{ detail["watch.price"]*detail.quantity }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock %}

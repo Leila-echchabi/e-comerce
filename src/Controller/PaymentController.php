@@ -64,13 +64,11 @@ class PaymentController extends AbstractController
      * @param Request     $request
      * @param CartService $cartService
      * @Route("/payment", name="payment")
-     * @Route("/profile", name="profile")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @throws \Stripe\Exception\ApiErrorException
      */
     public function paymentCart(Request $request, CartService $cartService, EntityManagerInterface $em){
 
-        $order = $this->createOrder($request,$cartService,$em);
         if ($request->isMethod('POST')){
             $token = $request->get('stripeToken');
 
@@ -82,17 +80,19 @@ class PaymentController extends AbstractController
                 'source' => $token,
                 'description' => 'My First Test Charge (created for API docs)',
             ]);
-
+            $order = $this->createOrder($request,$cartService,$em);
             $cartService->deleteCart();
             $this->addFlash('success', 'Commande validée');
 
-            return $this->redirectToRoute('profile');
+            return $this->redirectToRoute('profil');
+
         }
 
-        return $this->render('user/profile.html.twig', array(
-            'cart_service'=>$cartService,
-            'order'=>$order
-        ));
+            return $this->render('cart/panier.html.twig', array(
+                'cart_service'=>$cartService
+
+            ));
+
     }
 
 }
