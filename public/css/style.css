@@ -49,8 +49,6 @@
                     nav .fas{
                         padding-left: 20px;
                         padding-right: 20px;
-                    }
-                    nav .fas{
                         color: #c48b21;
                     }
 
@@ -134,6 +132,11 @@
                     button .orange {
                         color: #c48b21;
                         border-color: #fff;
+                    }
+
+                    .btn-validate {
+                        color: white;
+                        background-color: #c48b21;
                     }
                     /*---------A PROPOS----------*/
                     /*----------MAIN CART---------*/

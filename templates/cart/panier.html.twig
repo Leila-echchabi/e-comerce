@@ -15,41 +15,41 @@
                     <div class="contenu-panier">
                         {% if cart_service.fullCart | length > 0 %}
                             <table class="table text-center">
-                            <thead>
-                            <tr>
-                                <th></th>
-                                <th>Produit</th>
-                                <th>Prix</th>
-                                <th>Quantité</th>
-                                <th>Total</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for item in cart_service.fullCart %}
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <a class="img-fluid" href="{{ path('detail', {id: item.watch.id}) }}">
-                                            <img src="{{ vich_uploader_asset (item.watch, 'imageFile') }}"
-                                                 class="img-fluid"
-                                                 alt="{{ item.watch.name }}" width="80 px">
-                                        </a>
-                                    </td>
-                                    <td>{{ item.watch.name }}</td>
-                                    <td>{{ item.watch.price }}€</td>
-                                    <td>{{ item.quantity }}</td>
-                                    <td>{{ item.watch.price * item.quantity }}€</td>
-                                    <td>
-                                        <a href="{{path('remove_cart', {'id' : item.watch.id})}}" class="btn btn-sm
-                                        trash">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
+                                    <th></th>
+                                    <th>Produit</th>
+                                    <th>Prix</th>
+                                    <th>Quantité</th>
+                                    <th>Total</th>
+                                    <th></th>
                                 </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in cart_service.fullCart %}
+                                    <tr>
+                                        <td>
+                                            <a class="img-fluid" href="{{ path('detail', {id: item.watch.id}) }}">
+                                                <img src="{{ vich_uploader_asset (item.watch, 'imageFile') }}"
+                                                     class="img-fluid"
+                                                     alt="{{ item.watch.name }}" width="80 px">
+                                            </a>
+                                        </td>
+                                        <td>{{ item.watch.name }}</td>
+                                        <td>{{ item.watch.price }}€</td>
+                                        <td>{{ item.quantity }}</td>
+                                        <td>{{ item.watch.price * item.quantity }}€</td>
+                                        <td>
+                                            <a href="{{path('remove_cart', {'id' : item.watch.id})}}" class="btn btn-sm
+                                        trash">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
 
-                            {% endfor %}
+                                {% endfor %}
 
-                            </tbody>
+                                </tbody>
                                 <tfoot>
                                 <td colspan="4" class="text-right">Total : </td>
                                 <td>{{ cart_service.total }} €</td>
@@ -72,14 +72,14 @@
                             </div>
                         {% else %}
                             <div class="row justify-content-end">
-                                <a class="btn btn-success" href="{{ path('intent' ) }}">
-                                   Valider le panier
+                                <a class="btn btn-validate" href="{{ path('intent' ) }}">
+                                    Valider le panier
                                 </a>
                             </div>
                         {% endif%}
 
                         <div class="row justify-content-start">
-                            <a href="{{ path('delete_cart') }}" class="btn btn-danger">Vider le Panier</a>
+                            <a href="{{ path('delete_cart') }}" class="btn btn-light">Vider le Panier</a>
                         </div>
 
                     {% endif %}

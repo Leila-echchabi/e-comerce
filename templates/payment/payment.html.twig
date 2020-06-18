@@ -9,7 +9,7 @@
 
 
             {{ form_start(paymentForm, {'method': 'POST', 'action': path('payment'),'attr': {'id': 'payment-form'}}) }}
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-7">
                         <h3>Coordonnées</h3>
                         {{ form_row(paymentForm.firstname) }}
@@ -35,7 +35,8 @@
                         <!-- placeholder for Elements -->
                         <div id="card-element"></div>
 
-                        <button class="mt-5" id="card-button" data-secret="{{intent.client_secret}}">
+                        <button class="mt-5 btn btn-validate btn-block " id="card-button" data-secret="{{intent
+                        .client_secret}}">
                             Payer
                         </button>
 
