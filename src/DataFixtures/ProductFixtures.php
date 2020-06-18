@@ -43,8 +43,8 @@ const PRODUCTS = '[
 const BRACELET = [
     'Acier',
     'Or',
-    'Titan',
-    'Cuire',
+    'Titane',
+    'Cuir',
     'Céramique',
     'Caoutchouc'
 ];
@@ -52,7 +52,7 @@ const BRACELET = [
     const CASES = [
         'Acier',
         'Or',
-        'Titan'
+        'Titane'
     ];
 
     public function load(ObjectManager $manager)

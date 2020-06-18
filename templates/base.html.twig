@@ -67,8 +67,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link white" href="{{ path('cart') }}">
-                            <i class="fas fa-shopping-bag"><span class='nb'>{{
-                                cart_service.totalQuantity }}</span>
+                            <i class="fas fa-shopping-bag">
+                                {% if cart_service.fullCart | length > 0 %}
+                                    <span class='nb'>({{ cart_service.totalQuantity }})</span>
+                                {% endif %}
                             </i>
                         </a>
                     </li>
