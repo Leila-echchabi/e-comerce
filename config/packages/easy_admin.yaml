@@ -6,17 +6,26 @@ easy_admin:
     user:
         display_name: true
         display_avatar: true
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
     design:
         form_theme:
             - "@EasyAdmin/form/bootstrap_4.html.twig"
         # Ces lignes définiront notre menu
         menu:
+            - { label: 'Boutique' }
+            - { label: 'Boutique', route: 'boutique', icon: 'home' }
             - { label: 'Produits' }
             - { entity: 'Product', label: 'Produit', icon: 'clock' }
             - { label: 'Utilisateurs' }
             - { entity: 'User', label: 'Utilisateurs', icon: 'user' }
             - { label: 'Commandes' }
             - { entity: 'Order', label: 'Commandes', icon: 'list' }
+            - { label: 'Dashboard' }
+            - { label: 'Paiement', url: 'https://dashboard.stripe.com/test/dashboard', target: '_blank'
+              , icon: 'credit-card' }
     entities:
         Product:
             # Correspond au fichier Product.php

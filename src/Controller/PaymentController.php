@@ -22,7 +22,7 @@ class PaymentController extends AbstractController
         $items = $cartService->getFullCart();
 
         $order = new Order();
-        $order->setNumber('ORDER');
+        $order->setNumber('ORDER'.'-'.random_int(0,100000));
         $order->setDate(new \DateTime());
         $order->setAmount($cartService->getTotal());
         $order->setDetails($cartService->getDetailCart());
@@ -58,6 +58,7 @@ class PaymentController extends AbstractController
             'paymentForm' => $form->createView(),
             'intent'=>$intent
         ));
+
     }
 
     /**
@@ -82,7 +83,7 @@ class PaymentController extends AbstractController
             ]);
             $order = $this->createOrder($request,$cartService,$em);
             $cartService->deleteCart();
-            $this->addFlash('success', 'Commande validée');
+            $this->addFlash('success', 'paiement validée,la commande est en cours de traitement');
 
             return $this->redirectToRoute('profil');
 

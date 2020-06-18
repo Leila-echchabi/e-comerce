@@ -42,14 +42,15 @@
                         color: #c48b21;
                     }
                     
-                    nav .fas {
+                    nav .fa-shopping-bag{
                         border-left: 1px solid black;
                         border-right: 1px solid black;
                         padding-left: 20px;
                         padding-right: 20px;
+                    }
+                    nav .fas{
                         color: #c48b21;
                     }
-
 
                     /*----------MAIN INDEX---------*/
                     

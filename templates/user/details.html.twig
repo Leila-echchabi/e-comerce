@@ -5,26 +5,33 @@
 {% block main %}
     <main>
         <div class="container">
-            <h1> Commande ref:{{ order.number }}</h1>
+            <h1> Commande :</h1>
+            <h2>{{ order.number }}</h2>
+            <h2>Date de commande : {{ order.date.format('Y-m-d H:i:s') }}</h2>
             <table class="table">
                 <thead>
-                <tr class="align-middle">
-                    <th class="align-middle">Date</th>
-                    <th class="align-middle">Réference</th>
-                    <th class="align-middle">Montant</th>
-                    <th class="align-middle">Détails</th>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Montant</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for detail in order.details %}
                     <tr>
                         <td> {{ detail["watch.name"] }}</td>
-                        <td>{{ detail["watch.price"] }}</td>
+                        <td>{{ detail["watch.price"] }} €</td>
                         <td>{{ detail.quantity }}</td>
-                        <td>{{ detail["watch.price"]*detail.quantity }}</td>
+                        <td>{{ detail["watch.price"]*detail.quantity }} €</td>
                     </tr>
                 {% endfor %}
                 </tbody>
+                <tfoot>
+                <td colspan="3" class="text-right">Total : </td>
+                <td>{{ order.amount }} €</td>
+                <td></td>
+                </tfoot>
             </table>
         </div>
     </main>

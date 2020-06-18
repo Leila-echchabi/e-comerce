@@ -53,12 +53,13 @@
                             <a class="nav-link" href="{{ path('profil') }}">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_logout') }}"><i class="fas fa-user"></i>Se
+                            <a class="nav-link" href="{{ path('app_logout') }}"><i class="fas fa-user"></i> Se
                                 déconnecter</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_login') }}"><i class="fas fa-user"></i>Se connecter</a>
+                            <a class="nav-link" href="{{ path('app_login') }}"><i class="fas fa-user"></i> Se
+                                connecter</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
@@ -82,6 +83,13 @@
     </div>
 </header>
 
+<div class="container">
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success alert-dismissible fade show col-6 d-flex justify-content-center">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
 {% block main %}
 
 {% endblock %}
