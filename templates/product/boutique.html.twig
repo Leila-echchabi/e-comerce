@@ -7,9 +7,8 @@
         <div class="row center productsList">
             {% for watch in watchesList %}
                 <div class="product col-md-6 col-lg-4">
-
                     <div class="card" style="width: 18rem;">
-                        <a class="watch" href="{{ path('detail', {id: watch.id}) }}">
+                        <a href="{{ path('detail', {id: watch.id}) }}">
                             <img src="{{ vich_uploader_asset (watch, 'imageFile') }}" class="card-img-top" alt="{{ watch.name }}">
                             <div class="card-body">
                                 <p class="card-text text-center">{{ watch.name }}</p>

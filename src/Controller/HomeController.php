@@ -28,15 +28,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("faq", name="faq")
-     */
-    public function faq()
-    {
-        return $this->render('home/faq.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
 
     public function logToAdmin(){
         return $this->render('/admin', [
