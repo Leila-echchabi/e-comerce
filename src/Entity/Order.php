@@ -111,6 +111,6 @@ class Order
 
     public function __toString()
     {
-        $this->getUserId();
+        return $this->getNumber();
     }
 }

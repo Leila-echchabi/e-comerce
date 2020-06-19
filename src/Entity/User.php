@@ -150,6 +150,9 @@ class User implements UserInterface
     public function __toString()
     {
         return $this->email;
+//        return $this->lastname;
+//        return $this->firstname;
+//        return $this->getOrders();
     }
 
     public function setUsername(string $username): self

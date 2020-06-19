@@ -61,8 +61,10 @@ easy_admin:
                 fields:
                     - id
                     - email
+                    - {property: 'firstname', label: 'Prénom'}
+                    - {property: 'lastname', label: 'Nom'}
                     - { property: 'roles', label: 'Rôles', type: json_array}
-                    - { property: 'orders', label: 'commandes'}
+                    - {property: 'orders', label: 'Commandes'}
 
             form:
                 field:
